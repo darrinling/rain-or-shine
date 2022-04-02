@@ -1,20 +1,28 @@
-// fetch('', {
-//   // The browser fetches the resource from the remote server without first looking in the cache.
-//   // The browser will then update the cache with the downloaded resource.
-//   cache: 'reload',
-// })
-//   .then(function (response) {
-//     return response.json();
-//   })
-//   .then(function (data) {
-//     console.log(data);
-//   });
+
 
   var searchBtnEl = document.getElementById("searchBtn");
+  var cityStateEl = document.getElementById("cityState");
+  var searched;
 
-  searchBtnEl.addEventListener("click", getData)
-// script file works and its connected
-  function getData() {
-    console.log("connected");
+  searchBtnEl.addEventListener("click", saveData)
+  console.log(searched);
+// click on search button and save data to local storage
+  function saveData() {
+    searched = cityStateEl.value;
+    localStorage.setItem('zipcode', searched);
   }
-  
+
+  // const options = {
+  //   method: 'GET',
+  //   headers: {
+  //     Accept: 'application/json',
+  //     Authorization: 'fsq3nqTlLdacSaQr23EEgX2K4a21dujFoDOqoOceOnZOq4U='
+  //   }
+  // };
+
+  // var url = 'https://api.foursquare.com/v3/places/search?near=boulder%2C%20co';
+  // var searchLocation = ;
+  // fetch(url, options)
+  //   .then(response => response.json())
+  //   .then(response => console.log(response))
+  //   .catch(err => console.error(err));
