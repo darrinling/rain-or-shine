@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --black: #141414;
+  --white: #f5f5f5;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  color: var(--black);
+  font-family: "Roboto", sans-serif;
+}
+
+*:focus {
+  outline: none;
+}
+
+.header {
+  font-weight: 300;
+  font-size: 40px;
+}
+
+.city-search {
+  padding: 50px;
+  background-color: slategray;
+  border-radius: 12px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  transition: box-shadow 0.3s;
+}
+
+.city-search:hover {
+  -webkit-box-shadow: 0px 12px 15px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 12px 15px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+input {
+  padding: 7px 15px;
+  border: 2px solid var(--black);
+  border-radius: 6px;
+  background: var(--white);
+}
+
+button {
+  padding: 7px 12px 7px 12px;
+  border-radius: 6px;
+  border: unset;
+  background-color: var(--black);
+  color: var(--white);
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button:hover {
+  -webkit-box-shadow: 0px 8px 11px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 8px 11px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+button:active {
+  box-shadow: unset;
+}
+
+.food-drinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--black);
+  width: 100vw;
+  height: 100vh;
+  max-width: 250px;
+  max-height: 350px;
+  padding: 20px;
+}
+
+.food-drinks button {
+  margin: 15px;
+  width: 90%;
+}
+
+.landing {
+  display: flex;
+  background-color: slategray;
+  color: var(--white);
+  border-radius: 12px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  transition: box-shadow 0.3s;
+}
+
+.landing:hover {
+  -webkit-box-shadow: 0px 12px 15px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 12px 15px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.results {
+  width: 100vw;
+  height: 100vh;
+  max-width: 500px;
+  max-height: 350px;
+  padding: 20px;
+}
+
+.results h3 {
+  margin: 20px 0 0 20px;
+}
