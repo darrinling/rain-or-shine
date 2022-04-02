@@ -1,31 +1,18 @@
 var resultsContainerEl = document.getElementById("#resultsContainer");
 var results = document.querySelector('ul');
-var foodBtn = document.querySelector('#food');
+var foodBtn = document.getElementById('food');
 var result = document.querySelector('#result');
 var weather;
 result.textContent = 'Weather results for ' + localStorage.getItem('zipcode') + ':';
 
-// get lat and long from zip code
-// var client = new XMLHttpRequest();
-// client.open("GET", "http://api.zippopotam.us/us/90210", true);
-// client.onreadystatechange = function() {
-// 	if(client.readyState == 4) {
-// 		alert(client.responseText);
-// 	};
-// };
+foodBtn.addEventListener("click", getLocations)
 
-// client.send();
-
-// function zipConvert() {
-
-
-// display current weather conditions based on zipcode entered
+// display current weather conditions based on zip code searched
 function getWeather() {
   var options = {
     method: 'GET',
     headers: {
       Accept: 'application/json',
-      // Authorization: '0c8c16e2fdc01233e92bac3bc391f34b'
     }
   };
   var searchLocation = localStorage.getItem('zipcode');
@@ -36,7 +23,7 @@ function getWeather() {
       return response.json();
     })
     .then(function(data) {
-      console.log(data.main);
+      localStorage.setItem('temp', data.main.temp);
       Object.keys(data.main).forEach(key => {
         var listItem = document.createElement('li');
         listItem.textContent = key + ': ' + data.main[key];
@@ -45,17 +32,10 @@ function getWeather() {
     })
   }
 
-      // for (var i = 0; i < data.main.length; i++) {
-      //   console.log(data[i].main);
-      //   var listItem = document.createElement('li');
-      //   listItem.textContent = data.main[i];
-      //   results.appendChild(listItem);
-      // }
-  //   });
-  // }
-
 // get place recommendations from Foursquare api
 function getLocations() {
+  clearChildren();
+  result.textContent = 'It is ' + temperature + ' degrees out. Good options would be:';
   var options = {
     method: 'GET',
     headers: {
@@ -81,7 +61,18 @@ function getLocations() {
     });
   }
 
-getWeather();
+// empty the list
+function clearChildren() {
+  var child = results.lastElementChild;
+  while (child) {
+    results.removeChild(child);
+    child = results.lastElementChild;
+  }
+}
 
+// start with the weather shown for input zip code
+getWeather();
+// save temperature local storage item to a variable for conditional statements
+var temperature = localStorage.getItem('temp');
 
 // might want to make a button to refer back home
