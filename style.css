@@ -3,6 +3,7 @@
 :root {
   --black: #141414;
   --white: #f5f5f5;
+  --error: #970d0d;
 }
 
 body {
@@ -116,4 +117,10 @@ button:active {
 
 .results h3 {
   margin: 20px 0 0 20px;
+}
+
+.input-error {
+  margin-top: 0;
+  font-weight: bold;
+  color: var(--error);
 }
