@@ -21,7 +21,9 @@ function getWeather() {
   };
   var auth = 'id=0c8c16e2fdc01233e92bac3bc391f34b'
   var searchLocation = localStorage.getItem('zipcode');
+
   var url = 'https://api.openweathermap.org/data/2.5/weather?zip=' + searchLocation + '&units=imperial' + '&app' + auth;
+
 
   fetch(url, options)
     .then(function(response) {
@@ -34,6 +36,10 @@ function getWeather() {
         listItem.textContent = key + ': ' + data.main[key];
         results.appendChild(listItem);
       })
+    })
+    .catch(function(error) {
+      window.location = 'index.html';
+      localStorage.setItem('invalid-zip', true);
     })
   }
 
