@@ -2,14 +2,14 @@ var resultsContainerEl = document.getElementById("#resultsContainer");
 var results = document.querySelector('ul');
 var foodBtn = document.getElementById('food');
 var drinkBtn = document.getElementById('drinks');
-var eventsBtn = document.getElementById('events');
+var parksBtn = document.getElementById('parks');
 var result = document.querySelector('#result');
 var weather;
 result.textContent = 'Weather results for ' + localStorage.getItem('zipcode') + ':';
 
 foodBtn.addEventListener("click", getFoodLocations);
 drinkBtn.addEventListener("click", getDrinkLocations);
-eventsBtn.addEventListener("click", getEventLocations);
+parksBtn.addEventListener("click", getParkLocations);
 
 // display current weather conditions based on zip code searched
 function getWeather() {
@@ -55,7 +55,7 @@ function getFoodLocations() {
     }
   };
   var searchLocation = localStorage.getItem('zipcode');
-  var url = 'https://api.foursquare.com/v3/places/search?near=' + searchLocation;
+  var url = 'https://api.foursquare.com/v3/places/search?categories=13064&near=' + searchLocation;
 
   fetch(url, options)
     .then(function(response) {
@@ -83,7 +83,7 @@ function getDrinkLocations() {
     }
   };
   var searchLocation = localStorage.getItem('zipcode');
-  var url = 'https://api.foursquare.com/v3/places/search?near=' + searchLocation;
+  var url = 'https://api.foursquare.com/v3/places/search?categories=13003&near=' + searchLocation;
 
   fetch(url, options)
     .then(function(response) {
@@ -100,10 +100,15 @@ function getDrinkLocations() {
     });
   }
 
-function getEventLocations() {
+function getParkLocations() {
   clearChildren();
+  if (temperature < 50) {
+    result.textContent = 'It is ' + temperature + ' degrees out. NOT RECOMMENDED!! But if you have to get outside put on a jacket';
+  } else {
   result.textContent = 'It is ' + temperature + ' degrees out. Good options would be:';
-  var options = {
+
+  }
+    var options = {
     method: 'GET',
     headers: {
       Accept: 'application/json',
@@ -111,7 +116,7 @@ function getEventLocations() {
     }
   };
   var searchLocation = localStorage.getItem('zipcode');
-  var url = 'https://api.foursquare.com/v3/places/search?near=' + searchLocation;
+  var url = 'https://api.foursquare.com/v3/places/search?categories=16032&near=' + searchLocation;
 
   fetch(url, options)
     .then(function(response) {
@@ -142,10 +147,3 @@ function clearChildren() {
 getWeather();
 // save temperature local storage item to a variable for conditional statements
 var temperature = localStorage.getItem('temp');
-
-// might want to make a button to refer back home
-console.log('connected');
-
-function displayWeather() {
-    
-}
