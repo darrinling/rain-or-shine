@@ -124,6 +124,7 @@ function getEventLocations() {
         var listItem = document.createElement('li');
         listItem.textContent = data.results[i].name;
         results.appendChild(listItem);
+        console.log(listItem);
       }
     });
   }
@@ -143,3 +144,8 @@ getWeather();
 var temperature = localStorage.getItem('temp');
 
 // might want to make a button to refer back home
+console.log('connected');
+
+function displayWeather() {
+    
+}
