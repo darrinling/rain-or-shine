@@ -62,6 +62,7 @@ function getLocations() {
         var listItem = document.createElement('li');
         listItem.textContent = data.results[i].name;
         results.appendChild(listItem);
+        console.log(listItem);
       }
     });
   }
