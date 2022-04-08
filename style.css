@@ -16,6 +16,7 @@ body {
   background-color: var(--white);
   color: var(--black);
   font-family: "Roboto", sans-serif;
+  list-style: none;
 }
 
 *:focus {
