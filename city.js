@@ -21,9 +21,7 @@ function getWeather() {
   };
   var auth = 'id=0c8c16e2fdc01233e92bac3bc391f34b'
   var searchLocation = localStorage.getItem('zipcode');
-
   var url = 'https://api.openweathermap.org/data/2.5/weather?zip=' + searchLocation + '&units=imperial' + '&app' + auth;
-
 
   fetch(url, options)
     .then(function(response) {
@@ -71,18 +69,18 @@ function getFoodLocations() {
     }
   };
   var searchLocation = localStorage.getItem('zipcode');
-  var url = 'https://api.foursquare.com/v3/places/search?categories=13064&near=' + searchLocation;
+  var url = 'https://api.foursquare.com/v3/places/search?categories=13000&near=' + searchLocation;
 
   fetch(url, options)
     .then(function(response) {
       return response.json();
     })
     .then(function(data) {
-      console.log(data.results);
       for (var i = 0; i < data.results.length; i++) {
-        console.log(data.results[i].name);
+        var distance = (data.results[i].distance / 1609);
+        distance = distance.toFixed(2);
         var listItem = document.createElement('li');
-        listItem.textContent = data.results[i].name;
+        listItem.textContent = data.results[i].name + '  (' + distance + ' mi. away)';;
         results.appendChild(listItem);
       }
     });
@@ -108,9 +106,10 @@ function getDrinkLocations() {
     .then(function(data) {
       console.log(data.results);
       for (var i = 0; i < data.results.length; i++) {
-        console.log(data.results[i].name);
+        var distance = (data.results[i].distance / 1609);
+        distance = distance.toFixed(2);
         var listItem = document.createElement('li');
-        listItem.textContent = data.results[i].name;
+        listItem.textContent = data.results[i].name + '  (' + distance + ' mi. away)';
         results.appendChild(listItem);
       }
     });
@@ -139,13 +138,12 @@ function getParkLocations() {
       return response.json();
     })
     .then(function(data) {
-      console.log(data.results);
       for (var i = 0; i < data.results.length; i++) {
-        console.log(data.results[i].name);
+        var distance = (data.results[i].distance / 1609);
+        distance = distance.toFixed(2);
         var listItem = document.createElement('li');
-        listItem.textContent = data.results[i].name;
+        listItem.textContent = data.results[i].name + '  (' + distance + ' mi. away)';;
         results.appendChild(listItem);
-        console.log(listItem);
       }
     });
   }
