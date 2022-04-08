@@ -29,17 +29,33 @@ function getWeather() {
     })
     .then(function(data) {
       localStorage.setItem('temp', data.main.temp);
-      Object.keys(data.main).forEach(key => {
-        var listItem = document.createElement('li');
-        listItem.textContent = key + ': ' + data.main[key];
-        results.appendChild(listItem);
+        var getTemp = localStorage.getItem('temp')
+        var temp = document.createElement("div")
+        temp.textContent = "Current Weather: " + getTemp
+        results.appendChild(temp);
+      localStorage.setItem("min", data.main.temp_min);
+        var getMin = localStorage.getItem('min')
+        var min = document.createElement("div")
+        min.textContent = "Today's Minimum: " + getMin
+        results.appendChild(min);
+      localStorage.setItem("max", data.main.temp_max);
+        var getMax = localStorage.getItem('max')
+        var max = document.createElement("div")
+        max.textContent = "Today's Maximum: " + getMax
+        results.appendChild(max);
+      localStorage.setItem("feels", data.main.feels_like);
+        var getFeels = localStorage.getItem('feels')
+        var feels = document.createElement("div")
+        feels.textContent = "It feels like: " + getFeels
+        results.appendChild(feels);
+      localStorage.setItem("humidity", data.main.humidity);
+        var getHumidity = localStorage.getItem('humidity')
+        var hum = document.createElement("div")
+        hum.textContent = "Today's Humidity: " + getHumidity
+        results.appendChild(hum);
       })
-    })
-    .catch(function(error) {
-      window.location = 'index.html';
-      localStorage.setItem('invalid-zip', true);
-    })
-  }
+    }
+
 
 // get place recommendations from Foursquare api
 function getFoodLocations() {
