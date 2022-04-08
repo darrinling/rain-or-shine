@@ -79,7 +79,7 @@ function getFoodLocations() {
       for (var i = 0; i < data.results.length; i++) {
         var distance = (data.results[i].distance / 1609);
         distance = distance.toFixed(2);
-        var listItem = document.createElement('li');
+        var listItem = document.createElement('div');
         listItem.textContent = data.results[i].name + '  (' + distance + ' mi. away)';;
         results.appendChild(listItem);
       }
@@ -108,7 +108,7 @@ function getDrinkLocations() {
       for (var i = 0; i < data.results.length; i++) {
         var distance = (data.results[i].distance / 1609);
         distance = distance.toFixed(2);
-        var listItem = document.createElement('li');
+        var listItem = document.createElement('div');
         listItem.textContent = data.results[i].name + '  (' + distance + ' mi. away)';
         results.appendChild(listItem);
       }
@@ -141,7 +141,7 @@ function getParkLocations() {
       for (var i = 0; i < data.results.length; i++) {
         var distance = (data.results[i].distance / 1609);
         distance = distance.toFixed(2);
-        var listItem = document.createElement('li');
+        var listItem = document.createElement('div');
         listItem.textContent = data.results[i].name + '  (' + distance + ' mi. away)';;
         results.appendChild(listItem);
       }
