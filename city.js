@@ -34,27 +34,27 @@ function getWeather() {
       result.textContent = 'Showing weather details for ' + data.name + ':';
       localStorage.setItem('temp', data.main.temp);
       var getTemp = localStorage.getItem('temp')
-      var temp = document.createElement("div")
-      temp.textContent = "Current Weather: " + getTemp
+      var temp = document.createElement("li")
+      temp.textContent = "Current Weather: " + getTemp + "°F"
       results.appendChild(temp);
     localStorage.setItem("min", data.main.temp_min);
       var getMin = localStorage.getItem('min')
-      var min = document.createElement("div")
-      min.textContent = "Today's Minimum: " + getMin
+      var min = document.createElement("li")
+      min.textContent = "Today's Minimum: " + getMin + "°F"
       results.appendChild(min);
     localStorage.setItem("max", data.main.temp_max);
       var getMax = localStorage.getItem('max')
-      var max = document.createElement("div")
-      max.textContent = "Today's Maximum: " + getMax
+      var max = document.createElement("li")
+      max.textContent = "Today's Maximum: " + getMax+ "°F"
       results.appendChild(max);
     localStorage.setItem("feels", data.main.feels_like);
       var getFeels = localStorage.getItem('feels')
-      var feels = document.createElement("div")
-      feels.textContent = "It feels like: " + getFeels
+      var feels = document.createElement("li")
+      feels.textContent = "It feels like: " + getFeels + "°F"
       results.appendChild(feels);
     localStorage.setItem("description", data.weather[0].description);
       var getDescription = localStorage.getItem('description')
-      var descript = document.createElement("div")
+      var descript = document.createElement("li")
       descript.textContent = "It looks like outside it's " + getDescription
       results.appendChild(descript);
      var video = $('#cityVideo source');
@@ -120,7 +120,7 @@ function getFoodLocations() {
       for (var i = 0; i < data.results.length; i++) {
         var distance = (data.results[i].distance / 1609);
         distance = distance.toFixed(2);
-        var listItem = document.createElement('div');
+        var listItem = document.createElement('li');
         listItem.textContent = data.results[i].name + '  (' + distance + ' mi. away)';;
         results.appendChild(listItem);
       }
@@ -150,7 +150,7 @@ function getDrinkLocations() {
       for (var i = 0; i < data.results.length; i++) {
         var distance = (data.results[i].distance / 1609);
         distance = distance.toFixed(2);
-        var listItem = document.createElement('div');
+        var listItem = document.createElement('li');
         listItem.textContent = data.results[i].name + '  (' + distance + ' mi. away)';
         results.appendChild(listItem);
       }
@@ -185,7 +185,7 @@ function getDrinkLocations() {
       for (var i = 0; i < data.results.length; i++) {
         var distance = (data.results[i].distance / 1609);
         distance = distance.toFixed(2);
-        var listItem = document.createElement('div');
+        var listItem = document.createElement('li');
         listItem.textContent = data.results[i].name + '  (' + distance + ' mi. away)';
         results.appendChild(listItem);
       }
