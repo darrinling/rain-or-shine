@@ -4,11 +4,14 @@ var foodBtn = document.getElementById('food');
 var drinkBtn = document.getElementById('drinks');
 var parksBtn = document.getElementById('parks');
 var result = document.querySelector('#result');
+const homeBtn = document.getElementById("homeBtn")
 var weather;
+
 
 foodBtn.addEventListener("click", getFoodLocations);
 drinkBtn.addEventListener("click", getDrinkLocations);
 parksBtn.addEventListener("click", getParkLocations);
+homeBtn.addEventListener("click", clearZipcode);
 // display current weather conditions based on zip code searched
 function getWeather() {
   var options = {
@@ -180,6 +183,9 @@ function clearChildren() {
   }
 }
 
+function clearZipcode() {
+  localStorage.removeItem("zipcode");
+}
 // start with the weather shown for input zip code
 getWeather();
 // save temperature local storage item to a variable for conditional statements
