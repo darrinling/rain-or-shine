@@ -6,6 +6,32 @@
   --error: #970d0d;
 }
 
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+} 
+
+.content h1 {
+  color: whitesmoke;
+}
+
+.content h4 {
+  color: whitesmoke;
+}
+
+.content {
+  position: fixed;
+  /* bottom: 0; */
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: auto;
+  padding: 20px;
+  border-radius: 15px;
+}
+
 .body {
   height: 100vh;
   width: 100vw;
@@ -147,3 +173,5 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+
