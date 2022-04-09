@@ -57,6 +57,24 @@ function getWeather() {
       var descript = document.createElement("div")
       descript.textContent = "It looks like outside it's " + getDescription
       results.appendChild(descript);
+     var video = $('#cityVideo source');
+     const weather = data.weather[0].id;
+     if(weather<300){
+       video.attr('src','./Thunder.mp4');
+     } else if(weather<500){
+      video.attr('src','./Drizzle.mp4');
+     } else if(weather<600){
+      video.attr('src','./Rain.mp4');
+     } else if(weather<700){
+      video.attr('src','./Snow.mp4');
+     } else if(weather<800){
+      video.attr('src','./Atmosphere.mp4');
+     } else if(weather===800){
+      video.attr('src','./Clear.mp4');
+     } else if(weather>800){
+      video.attr('src','./Cloudy.mp4');
+     }
+     document.getElementById('cityVideo').load();
     })
   }
 

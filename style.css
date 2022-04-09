@@ -12,6 +12,7 @@
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
+  object-fit: cover;
 } 
 
 .content h1 {
@@ -174,4 +175,15 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+#cityVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
 
+.cityContent {
+  position: fixed;
+}
