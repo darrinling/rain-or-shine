@@ -60,6 +60,10 @@
   font-weight: 300;
   font-size: 40px;
   margin: 10px 0 14px 0;
+  text-align: center;
+  border: 1px solid whitesmoke;
+  padding: 2px;
+  font-family: 'Anek Tamil', sans-serif;
 }
 
 .city-search {
@@ -70,6 +74,7 @@
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   transition: box-shadow 0.3s;
+  text-align: center;
 }
 
 .city-search:hover {
@@ -186,4 +191,25 @@ input[type="number"] {
 
 .cityContent {
   position: fixed;
+}
+
+.headerLogo {
+  color: whitesmoke;
+  font-size: larger;
+  text-align: center;
+  
+  font-family: 'Montserrat', sans-serif;
+}
+
+.result {
+
+}
+
+.header {
+  font-family: 'Anek Tamil', sans-serif;
+  color: whitesmoke;
+  /* border:0.5px solid whitesmoke; */
+  text-align: center;
+  text-decoration: dotted;
+  box-shadow: 5px;
 }
