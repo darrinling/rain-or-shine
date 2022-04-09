@@ -31,3 +31,4 @@ if (invalidZip === true) {
   localStorage.removeItem('invalid-zip');
   errorTextEl.innerHTML = 'Invalid Zipcode!';
 }
+

@@ -12,6 +12,7 @@
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
+  object-fit: cover;
 } 
 
 .content h1 {
@@ -59,6 +60,10 @@
   font-weight: 300;
   font-size: 40px;
   margin: 10px 0 14px 0;
+  text-align: center;
+  border: 1px solid whitesmoke;
+  padding: 2px;
+  font-family: 'Anek Tamil', sans-serif;
 }
 
 .city-search {
@@ -69,6 +74,7 @@
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   transition: box-shadow 0.3s;
+  text-align: center;
 }
 
 .city-search:hover {
@@ -174,4 +180,38 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+#cityVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
 
+.cityContent {
+  position: fixed;
+}
+
+.headerLogo {
+  color: whitesmoke;
+  font-size: larger;
+  text-align: center;
+  
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.header {
+  font-family: 'Anek Tamil', sans-serif;
+  color: whitesmoke;
+  /* border:0.5px solid whitesmoke; */
+  text-align: center;
+  text-decoration: dotted;
+  text-shadow: 2px 2px rgb(144, 142, 142);
+}
+
+li {
+  padding: 3px;
+  list-style-type:none
+}
